@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Blockchain Ledger | UniTrust</title>
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/ledger.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <a href="index.html" class="brand">
+                <span class="logo-mark">✦</span>
+                <div>
+                    <span class="brand__name">UniTrust</span>
+                    <span class="brand__tagline">Transparency You Can Trust</span>
+                </div>
+            </a>
+
+            <nav class="nav">
+                <a href="dashboard.html" class="nav__link">
+                    Public Dashboard
+                </a>
+
+                <a href="request.html" class="nav__link">
+                    Submit Request
+                </a>
+
+                <a href="tracking.html" class="nav__link">
+                    Track Request
+                </a>
+
+                <a href="ledger.html" class="nav__link active">
+                    Blockchain Ledger
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <p>UniTrust</p>
+                <span>Transparency You Can Trust</span>
+            </div>
+
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main">
+
+            <header class="topbar">
+                <div>
+                    <p class="eyebrow">PUBLIC PORTAL</p>
+                    <h2>Blockchain Ledger</h2>
+                </div>
+            </header>
+
+            <section class="content">
+
+                <div class="ledger-intro">
+                    <p class="eyebrow">TRANSPARENT TRANSACTION RECORDS</p>
+                    <h1 class="page-title">Public Blockchain Ledger</h1>
+                    <p class="page-sub">
+                        View approved financial requests recorded in the
+                        UniTrust ledger. Every entry represents an approved
+                        transaction in this demonstration system.
+                    </p>
+                </div>
+
+                <!-- SUMMARY CARDS -->
+                <div class="ledger-summary">
+
+                    <div class="summary-card">
+                        <span class="summary-label">Total Transactions</span>
+                        <h2 id="total-transactions">0</h2>
+                        <p>Approved records</p>
+                    </div>
+
+                    <div class="summary-card">
+                        <span class="summary-label">Total Approved Funds</span>
+                        <h2 id="total-funds">₱0.00</h2>
+                        <p>Combined transaction value</p>
+                    </div>
+
+                    <div class="summary-card">
+                        <span class="summary-label">Latest Block</span>
+                        <h2 id="latest-block">None</h2>
+                        <p>Most recent ledger entry</p>
+                    </div>
+
+                </div>
+
+                <!-- LEDGER INFORMATION -->
+                <div class="ledger-info">
+                    <div>
+                        <span class="info-icon">⛓</span>
+                        <div>
+                            <h3>How the Ledger Works</h3>
+                            <p>
+                                Only requests approved by the administrator
+                                are displayed here. Each approved request is
+                                assigned a demonstration block number and
+                                transaction record.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TRANSACTION TABLE -->
+                <div class="ledger-table-card">
+
+                    <div class="table-heading">
+                        <div>
+                            <h3>Transaction Records</h3>
+                            <p>Publicly viewable approved requests</p>
+                        </div>
+
+                        <span class="ledger-badge">APPROVED RECORDS</span>
+                    </div>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Block</th>
+                                    <th>Reference ID</th>
+                                    <th>Department</th>
+                                    <th>Project</th>
+                                    <th>Amount</th>
+                                    <th>Date Submitted</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="ledger-table-body">
+                                <tr>
+                                    <td colspan="7" class="empty-ledger">
+                                        Loading ledger records...
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+                <p class="ledger-disclaimer">
+                    Note: This is a blockchain-inspired academic demonstration.
+                    Records are stored in browser localStorage and are not
+                    independently validated blockchain transactions.
+                </p>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="js/ledger.js"></script>
+
+</body>
+</html>

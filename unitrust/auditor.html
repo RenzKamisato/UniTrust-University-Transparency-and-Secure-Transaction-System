@@ -1,0 +1,297 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Auditor Verification | UniTrust</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <!-- Page-specific CSS -->
+    <link rel="stylesheet" href="css/auditor.css">
+
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <a href="index.html" class="brand">
+
+            <span class="logo-mark">✦</span>
+
+            <div>
+                <span class="brand__name">UniTrust</span>
+                <span class="brand__tagline">
+                    Transparency You Can Trust
+                </span>
+            </div>
+
+        </a>
+
+        <p class="nav-label">Public Portal</p>
+
+        <nav class="nav">
+
+            <a href="dashboard.html">
+                ▦ &nbsp; Overview
+            </a>
+
+            <a href="ledger.html">
+                ◉ &nbsp; Blockchain Ledger
+            </a>
+
+            <a href="request.html">
+                + &nbsp; Department Request
+            </a>
+
+            <a href="auditor.html" class="active">
+                ✓ &nbsp; Auditor Verification
+            </a>
+
+            <a href="approval.html">
+                ▣ &nbsp; Admin Approval
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <div class="main">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <div>
+                <p class="topbar__uni">
+                    Batangas State University
+                </p>
+
+                <p class="topbar__sub">
+                    The National Engineering University
+                </p>
+            </div>
+
+            <span class="pill">
+                Auditor Demo
+            </span>
+
+        </header>
+
+
+        <!-- PAGE CONTENT -->
+        <main class="content">
+
+            <p class="eyebrow">
+                University Financial Transparency
+            </p>
+
+            <h1 class="page-title">
+                Auditor Verification
+            </h1>
+
+            <p class="page-sub">
+                Review submitted requests and verify their supporting documents.
+            </p>
+
+
+            <!-- SUMMARY CARD -->
+            <section class="auditor-summary">
+
+                <div>
+
+                    <p class="summary-label">
+                        Pending Verification
+                    </p>
+
+                    <h2 class="summary-number" id="pending-verification-count">
+                        0
+                    </h2>
+
+                    <p class="summary-description">
+                        Fund requests awaiting review
+                    </p>
+
+                </div>
+
+                <span class="summary-status">
+                    Pending Review
+                </span>
+
+            </section>
+
+
+            <!-- VERIFICATION QUEUE -->
+            <section class="auditor-card">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <h2>Verification Queue</h2>
+
+                        <p>
+                            Review and validate submitted fund requests.
+                        </p>
+
+                    </div>
+
+                    <span class="queue-count" id="queue-count">
+                        0 Requests
+                    </span>
+
+                </div>
+
+
+                <div class="table-wrap">
+
+                    <table class="auditor-table">
+
+                        <thead>
+
+                            <tr>
+                                <th>Reference ID</th>
+                                <th>Department</th>
+                                <th>Project</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="verification-queue">
+                            <!-- Automatically populated by auditor.js -->
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- REVIEW DETAILS -->
+            <section class="auditor-card review-panel" id="review-panel">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <h2>Request Review</h2>
+
+                        <p>
+                            Select a request from the verification queue.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- REQUEST INFORMATION -->
+                <div class="review-details">
+
+                    <div>
+                        <span>Reference ID</span>
+                        <strong id="review-reference">Not selected</strong>
+                    </div>
+
+                    <div>
+                        <span>Department</span>
+                        <strong id="review-department">Not selected</strong>
+                    </div>
+
+                    <div>
+                        <span>Project Title</span>
+                        <strong id="review-project">Not selected</strong>
+                    </div>
+
+                    <div>
+                        <span>Requested Amount</span>
+                        <strong id="review-amount">Not selected</strong>
+                    </div>
+
+                </div>
+
+
+                <!-- CHECKLIST -->
+                <div class="checklist">
+
+                    <h3>Verification Checklist</h3>
+
+                    <p>
+                        Confirm that the following requirements have been reviewed.
+                    </p>
+
+                    <label>
+                        <input type="checkbox" class="verify-check">
+                        Supporting documents are complete.
+                    </label>
+
+                    <label>
+                        <input type="checkbox" class="verify-check">
+                        Project description is clear and justified.
+                    </label>
+
+                    <label>
+                        <input type="checkbox" class="verify-check">
+                        Requested amount matches the supporting documents.
+                    </label>
+
+                    <label>
+                        <input type="checkbox" class="verify-check">
+                        Budget category is appropriate.
+                    </label>
+
+                </div>
+
+
+                <!-- REVIEW ACTIONS -->
+                <div class="review-actions">
+
+                    <button type="button" class="verify-btn">
+                        ✓ &nbsp; Mark as Verified
+                    </button>
+
+                    <button type="button" class="revision-btn">
+                        Return for Revision
+                    </button>
+
+                </div>
+
+
+                <!-- REVIEW MESSAGE -->
+                <p id="review-message" class="review-message"></p>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+</div>
+
+
+<!-- JAVASCRIPT -->
+<script src="js/auditor.js"></script>
+
+</body>
+</html>

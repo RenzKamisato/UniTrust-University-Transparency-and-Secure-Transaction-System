@@ -1,0 +1,256 @@
+
+.tracking-intro {
+    margin-bottom: 25px;
+}
+
+.tracking-search {
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+.tracking-search label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.search-controls {
+    display: flex;
+    gap: 12px;
+}
+
+.search-controls input {
+    flex: 1;
+    min-width: 0;
+    padding: 13px 15px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font: inherit;
+    outline: none;
+}
+
+.search-controls input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.search-controls button {
+    padding: 13px 22px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.search-controls button:hover {
+    background: #1d4ed8;
+}
+
+.search-hint {
+    margin-top: 10px;
+    color: #64748b;
+    font-size: 13px;
+}
+
+.search-error {
+    margin-top: 12px;
+    color: #dc2626;
+    font-size: 14px;
+}
+
+.result-header,
+.details-card,
+.progress-card,
+.remarks-card {
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+.result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.result-header h2 {
+    margin: 5px 0;
+}
+
+.result-header #result-project {
+    color: #64748b;
+}
+
+.current-status {
+    text-align: right;
+}
+
+.current-status span {
+    display: block;
+    color: #64748b;
+    font-size: 13px;
+    margin-bottom: 6px;
+}
+
+.current-status strong {
+    display: inline-block;
+    padding: 8px 13px;
+    border-radius: 20px;
+    background: #dbeafe;
+    color: #1d4ed8;
+    font-size: 13px;
+}
+
+.current-status strong.status-approved {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.current-status strong.status-rejected {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.current-status strong.status-revision {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+.details-card h3,
+.progress-card h3,
+.remarks-card h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.details-grid div span {
+    display: block;
+    color: #64748b;
+    font-size: 13px;
+    margin-bottom: 6px;
+}
+
+.details-grid div strong {
+    display: block;
+    color: #1e293b;
+    overflow-wrap: anywhere;
+}
+
+.progress-step {
+    display: flex;
+    gap: 16px;
+    position: relative;
+    padding-bottom: 28px;
+}
+
+.progress-step:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    left: 17px;
+    top: 38px;
+    width: 2px;
+    height: calc(100% - 38px);
+    background: #dbe3ec;
+}
+
+.step-marker {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e2e8f0;
+    color: #64748b;
+    font-weight: 700;
+    z-index: 1;
+}
+
+.progress-step.completed .step-marker {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.progress-step.current .step-marker {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.progress-step.issue .step-marker {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.step-content h4 {
+    margin: 3px 0 6px;
+    color: #1e293b;
+}
+
+.step-content p {
+    margin: 0 0 7px;
+    color: #64748b;
+    font-size: 14px;
+}
+
+.step-status {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    color: #64748b;
+}
+
+.progress-step.completed .step-status {
+    color: #15803d;
+}
+
+.progress-step.current .step-status {
+    color: #1d4ed8;
+}
+
+.progress-step.issue .step-status {
+    color: #b91c1c;
+}
+
+.remarks-card p {
+    margin: 0;
+    color: #475569;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+@media (max-width: 650px) {
+
+    .search-controls {
+        flex-direction: column;
+    }
+
+    .search-controls button {
+        width: 100%;
+    }
+
+    .result-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .current-status {
+        text-align: left;
+    }
+
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+}

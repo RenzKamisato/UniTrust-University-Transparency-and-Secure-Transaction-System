@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Public Dashboard | UniTrust</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+  <div class="app">
+
+    <aside class="sidebar">
+      <a href="index.html" class="brand">
+        <span class="logo-mark">✦</span>
+        <div>
+          <span class="brand__name">UniTrust</span>
+          <span class="brand__tagline">Transparency You Can Trust</span>
+        </div>
+      </a>
+
+      <p class="nav-label">Public portal</p>
+      
+      <nav class="nav">
+
+        <a href="dashboard.html" class="active">
+        ▦ &nbsp; Overview
+        </a>
+
+        <a href="ledger.html">
+        ◉ &nbsp; Blockchain Ledger
+        </a>
+
+        <a href="request.html">
+        + &nbsp; Department Request
+        </a>
+</nav>
+
+    </aside>
+
+    <div class="main">
+      <header class="topbar">
+        <div>
+          <p class="topbar__uni">Batangas State University</p>
+          <p class="topbar__sub">The National Engineering University</p>
+        </div>
+        <span class="pill">Public viewer</span>
+      </header>
+
+      <main class="content">
+        <p class="eyebrow">University Financial Transparency</p>
+<h1 class="page-title">Every peso, made visible.</h1>
+<p class="page-sub">A clear view of how university funds are allocated and spent.</p>
+
+<p class="notice"></p>
+<section class="stats">
+  
+
+  <article class="stat">
+    <p class="stat__label">Total University Budget</p>
+    <span class="stat__icon">▤</span>
+    <p class="stat__value">₱900M</p>
+    <p class="stat__note">Annual funding envelope</p>
+  </article>
+
+  <article class="stat">
+    <p class="stat__label">Total Allocated Funds</p>
+    <span class="stat__icon">◷</span>
+    <p class="stat__value">₱500M</p>
+    <p class="stat__note">90% of total budget</p>
+  </article>
+
+  <article class="stat">
+    <p class="stat__label">Total Disbursed Funds</p>
+    <span class="stat__icon">↗</span>
+    <p class="stat__value">₱450M</p>
+    <p class="stat__note">63% of total budget</p>
+  </article>
+
+  <article class="stat">
+    <p class="stat__label">Remaining Budget</p>
+    <span class="stat__icon">▣</span>
+    <p class="stat__value">₱50M</p>
+    <p class="stat__note">Allocated + unallocated</p>
+  </article>
+
+</section>
+<div class="row">
+
+  <section class="card">
+    <h2 class="card__title">Budget Allocation</h2>
+    <p class="card__sub">Distribution across university fund categories</p>
+
+    <div class="bar-row">
+      <span class="bar-row__label">Personnel Services</span>
+      <div class="bar"><div class="bar__fill" style="width: 60%"></div></div>
+      <span class="bar-row__value">60%</span>
+    </div>
+
+    <div class="bar-row">
+      <span class="bar-row__label">MOOE</span>
+      <div class="bar"><div class="bar__fill bar__fill--sage" style="width: 25%"></div></div>
+      <span class="bar-row__value">25%</span>
+    </div>
+
+    <div class="bar-row">
+      <span class="bar-row__label">Capital Outlay</span>
+      <div class="bar"><div class="bar__fill bar__fill--gold" style="width: 15%"></div></div>
+      <span class="bar-row__value">15%</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2 class="card__title">Budget utilization</h2>
+    <p class="util__big">63%</p>
+    <p class="util__help">of total budget disbursed</p>
+    <div class="bar"><div class="bar__fill" style="width: 63%"></div></div>
+
+    <ul class="legend">
+      <li><span>Disbursed</span> <strong>₱756M</strong></li>
+      <li><span>Allocated, not disbursed</span> <strong>₱324M</strong></li>
+    </ul>
+  </section>
+
+</div>
+<section class="card card--spaced">
+  <h2 class="card__title">Recent Transactions</h2>
+  <p class="card__sub">Follow the flow of public university funds.</p>
+
+  <div class="table-wrap">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Transaction ID</th>
+          <th>Department</th>
+          <th>Project</th>
+          <th>Category</th>
+          <th>Amount</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="cell-id">DEMO-250930-06</td>
+          <td>Engineering</td>
+          <td>Lab equipment</td>
+          <td class="cell-muted">Capital Outlay</td>
+          <td class="cell-strong">₱2.85M</td>
+          <td><span class="pill">Recorded</span></td>
+        </tr>
+        <tr>
+          <td class="cell-id">DEMO-250929-05</td>
+          <td>ICT Services</td>
+          <td>Network maintenance</td>
+          <td class="cell-muted">Maintenance and Other Operating System</td>
+          <td class="cell-strong">₱1.24M</td>
+          <td><span class="pill">Recorded</span></td>
+        </tr>
+        <tr>
+          <td class="cell-id">DEMO-250928-04</td>
+          <td>Human Resources</td>
+          <td>Faculty payroll</td>
+          <td class="cell-muted">Personnel</td>
+          <td class="cell-strong">₱18.5M</td>
+          <td><span class="pill">Recorded</span></td>
+        </tr>
+        <tr>
+          <td class="cell-id">DEMO-250926-03</td>
+          <td>Facilities</td>
+          <td>Solar installation</td>
+          <td class="cell-muted">Capital Outlay</td>
+          <td class="cell-strong">₱3.60M</td>
+          <td><span class="pill pill--warn">Pending</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+      </main>
+    </div>
+
+  </div>
+</body>
+</html>

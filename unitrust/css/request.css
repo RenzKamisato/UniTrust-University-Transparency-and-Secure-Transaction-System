@@ -1,0 +1,286 @@
+
+/* =================================
+   DEPARTMENT REQUEST PAGE
+================================= */
+
+body {
+    background: #f4f7f5;
+}
+
+
+/* PAGE LAYOUT */
+
+.request-layout {
+    display: grid;
+    grid-template-columns: 2.5fr 1fr;
+    gap: 18px;
+    align-items: start;
+    margin-top: 24px;
+}
+
+
+/* FORM CARD */
+
+.request-card {
+    background: #ffffff;
+    padding: 14px;
+    border-radius: 12px;
+}
+
+
+/* SECTION HEADINGS */
+
+.form-section-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #153e32;
+    margin: 4px 0 14px;
+}
+
+.form-section-title:not(:first-child) {
+    margin-top: 20px;
+}
+
+
+/* FORM GRID */
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 13px 14px;
+}
+
+
+/* INDIVIDUAL FIELDS */
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-field label {
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: #52675e;
+}
+
+
+/* INPUTS AND SELECTS */
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+
+    width: 100%;
+    border: none;
+    outline: none;
+
+    background: #e3ebe7;
+    border-radius: 5px;
+
+    padding: 10px;
+
+    font-family: "Inter", sans-serif;
+    font-size: 0.68rem;
+
+    color: #234538;
+
+}
+
+.form-field input,
+.form-field select {
+    height: 36px;
+}
+
+.form-field textarea {
+    min-height: 72px;
+    resize: vertical;
+}
+
+
+/* PLACEHOLDER TEXT */
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+    color: #a0b2a9;
+}
+
+
+/* FOCUS EFFECT */
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+    outline: 1px solid #2a7559;
+    background: #edf3ef;
+}
+
+
+/* FULL WIDTH FIELD */
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+
+/* DOCUMENT UPLOAD */
+
+.upload-area {
+    background: #f6faf8;
+    border-radius: 8px;
+    min-height: 72px;
+    position: relative;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 10px;
+}
+
+.upload-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.upload-plus {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #176348;
+    line-height: 1;
+}
+
+.upload-label strong {
+    font-size: 0.65rem;
+    color: #1d5e4a;
+}
+
+.upload-help {
+    font-size: 0.52rem;
+    color: #91a59a;
+}
+
+
+/* HIDE DEFAULT FILE INPUT */
+
+.upload-area input[type="file"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+
+/* SUBMIT BUTTON */
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 12px;
+}
+
+.form-actions .btn {
+    border: none;
+    background: #1d624c;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-family: "Inter", sans-serif;
+    font-size: 0.65rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.form-actions .btn:hover {
+    background: #154b39;
+}
+
+
+/* RIGHT SIDE CARD */
+
+.next-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 18px;
+    min-height: 168px;
+}
+
+.next-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #234538;
+    margin: 0 0 20px;
+}
+
+
+/* PROCESS STEPS */
+
+.next-step {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.step-number {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+
+    display: grid;
+    place-items: center;
+
+    background: #e3efe9;
+    color: #38765e;
+
+    border-radius: 50%;
+    font-size: 0.6rem;
+    font-weight: 600;
+}
+
+.next-step p {
+    font-size: 0.62rem;
+    font-weight: 600;
+    color: #42594f;
+    margin: 0;
+}
+
+
+/* =================================
+   RESPONSIVE DESIGN
+================================= */
+
+@media (max-width: 1000px) {
+
+    .request-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .next-card {
+        min-height: auto;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .full-width {
+        grid-column: auto;
+    }
+
+    .request-card {
+        padding: 12px;
+    }
+
+    .content {
+        padding: 20px 14px;
+    }
+
+}

@@ -1,0 +1,267 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Track Request | UniTrust</title>
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/tracking.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <a href="index.html" class="brand">
+                <span class="logo-mark">✦</span>
+                <div>
+                    <span class="brand__name">UniTrust</span>
+                    <span class="brand__tagline">Transparency You Can Trust</span>
+                </div>
+            </a>
+
+            <nav class="nav">
+
+                <a href="dashboard.html" class="nav__link">
+                    ◉ &nbsp; Public Dashboard
+                </a>
+
+                <a href="request.html" class="nav__link">
+                    ◉ &nbsp; Department Request
+                </a>
+
+                <a href="tracking.html" class="nav__link active">
+                    ◉ &nbsp; Track Request
+                </a>
+
+                <a href="ledger.html" class="nav__link">
+                    ◉ &nbsp; Blockchain Ledger
+                </a>
+
+            </nav>
+
+            <div class="sidebar-footer">
+                <p>UniTrust</p>
+                <span>Transparency You Can Trust</span>
+            </div>
+
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main">
+
+            <header class="topbar">
+                <div>
+                    <p class="eyebrow">PUBLIC PORTAL</p>
+                    <h2>Track Request</h2>
+                </div>
+            </header>
+
+            <section class="content">
+
+                <div class="tracking-intro">
+                    <p class="eyebrow">REQUEST MONITORING</p>
+
+                    <h1 class="page-title">Track Your Request</h1>
+
+                    <p class="page-sub">
+                        Monitor the progress of your department's financial
+                        request by entering its reference number.
+                    </p>
+                </div>
+
+                <!-- SEARCH CARD -->
+                <div class="tracking-search card">
+
+                    <label for="reference-input">
+                        Request Reference Number
+                    </label>
+
+                    <div class="search-controls">
+
+                        <input
+                            type="text"
+                            id="reference-input"
+                            placeholder="Example: UT-2026-001"
+                        >
+
+                        <button type="button" id="search-btn">
+                            Track Request
+                        </button>
+
+                    </div>
+
+                    <p class="search-hint">
+                        Enter the reference number provided after submitting
+                        your department request.
+                    </p>
+
+                    <p id="search-error" class="search-error"></p>
+
+                </div>
+
+                <!-- TRACKING RESULTS -->
+                <section id="tracking-result" hidden>
+
+                    <!-- REQUEST OVERVIEW -->
+                    <div class="result-header card">
+
+                        <div>
+                            <p class="eyebrow">REQUEST REFERENCE</p>
+
+                            <h2 id="result-reference">-</h2>
+
+                            <p id="result-project">-</p>
+                        </div>
+
+                        <div class="current-status">
+                            <span>Current Status</span>
+                            <strong id="current-status">Pending</strong>
+                        </div>
+
+                    </div>
+
+                    <!-- REQUEST DETAILS -->
+                    <div class="details-card card">
+
+                        <h3>Request Information</h3>
+
+                        <div class="details-grid">
+
+                            <div>
+                                <span>Department</span>
+                                <strong id="result-department">-</strong>
+                            </div>
+
+                            <div>
+                                <span>Project</span>
+                                <strong id="result-project-detail">-</strong>
+                            </div>
+
+                            <div>
+                                <span>Category</span>
+                                <strong id="result-category">-</strong>
+                            </div>
+
+                            <div>
+                                <span>Requested Amount</span>
+                                <strong id="result-amount">-</strong>
+                            </div>
+
+                            <div>
+                                <span>Date Submitted</span>
+                                <strong id="result-date">-</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- REQUEST PROGRESS -->
+                    <div class="progress-card card">
+
+                        <h3>Request Progress</h3>
+
+                        <div class="progress-step" id="step-submitted">
+
+                            <div class="step-marker">1</div>
+
+                            <div class="step-content">
+                                <h4>Request Submitted</h4>
+
+                                <p>
+                                    Your department request has been recorded.
+                                </p>
+
+                                <span class="step-status">Submitted</span>
+                            </div>
+
+                        </div>
+
+                        <div class="progress-step" id="step-auditor">
+
+                            <div class="step-marker">2</div>
+
+                            <div class="step-content">
+                                <h4>Auditor Verification</h4>
+
+                                <p id="auditor-description">
+                                    Waiting for auditor verification.
+                                </p>
+
+                                <span class="step-status" id="auditor-status">
+                                    Pending
+                                </span>
+                            </div>
+
+                        </div>
+
+                        <div class="progress-step" id="step-admin">
+
+                            <div class="step-marker">3</div>
+
+                            <div class="step-content">
+                                <h4>Admin Approval</h4>
+
+                                <p id="admin-description">
+                                    Waiting for auditor verification.
+                                </p>
+
+                                <span class="step-status" id="admin-status">
+                                    Waiting
+                                </span>
+                            </div>
+
+                        </div>
+
+                        <div class="progress-step" id="step-completed">
+
+                            <div class="step-marker">4</div>
+
+                            <div class="step-content">
+                                <h4>Final Result</h4>
+
+                                <p id="final-description">
+                                    Your request is being processed.
+                                </p>
+
+                                <span class="step-status" id="final-status">
+                                    In Progress
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- REMARKS -->
+                    <div class="remarks-card card">
+
+                        <h3>Review Remarks</h3>
+
+                        <p id="result-remarks">
+                            No remarks have been provided.
+                        </p>
+
+                    </div>
+
+                </section>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="js/tracking.js"></script>
+
+</body>
+</html>

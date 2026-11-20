@@ -1,0 +1,299 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Approval | UniTrust</title>
+
+    <!-- SHARED CSS -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <!-- PAGE CSS -->
+    <link rel="stylesheet" href="css/approval.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <a href="index.html" class="brand">
+                <span class="logo-mark">✦</span>
+
+                <div>
+                    <span class="brand__name">UniTrust</span>
+                    <span class="brand__tagline">
+                        Transparency You Can Trust
+                    </span>
+                </div>
+            </a>
+
+            <p class="nav-label">Public Portal</p>
+
+            <nav class="nav">
+
+                <a href="dashboard.html">
+                    ▦ &nbsp; Overview
+                </a>
+
+                <a href="ledger.html" class="nav__link">
+                    ◉ &nbsp; Blockchain Ledger
+                </a>
+
+                <a href="request.html">
+                    + &nbsp; Department Request
+                </a>
+
+                <a href="auditor.html">
+                    ✓ &nbsp; Auditor Verification
+                </a>
+
+                <a href="approval.html" class="active">
+                    ▣ &nbsp; Admin Approval
+                </a>
+
+            </nav>
+
+        </aside>
+
+
+        <!-- MAIN AREA -->
+        <main class="main">
+
+            <!-- TOPBAR -->
+            <header class="topbar">
+
+                <div>
+                    <p class="topbar__uni">
+                        UniTrust Administration
+                    </p>
+
+                    <p class="topbar__sub">
+                        Financial Transparency Portal
+                    </p>
+                </div>
+
+                <span class="pill">Administrator</span>
+
+            </header>
+
+
+            <!-- PAGE CONTENT -->
+            <section class="content approval-content">
+
+                <!-- PAGE HEADING -->
+                <div class="page-heading">
+
+                    <p class="eyebrow">
+                        ADMINISTRATOR PANEL
+                    </p>
+
+                    <h1 class="page-title">
+                        Admin Approval
+                    </h1>
+
+                    <p class="page-sub">
+                        Review verified department requests and make final approval decisions.
+                    </p>
+
+                </div>
+
+
+                <!-- SUMMARY CARDS -->
+                <div class="summary-grid">
+
+                    <div class="summary-card">
+                        <p>Pending Approval</p>
+                        <h2 id="pending-count">0</h2>
+                        <span>Awaiting decision</span>
+                    </div>
+
+                    <div class="summary-card">
+                        <p>Approved Requests</p>
+                        <h2 id="approved-count">0</h2>
+                        <span>Successfully approved</span>
+                    </div>
+
+                    <div class="summary-card">
+                        <p>Rejected Requests</p>
+                        <h2 id="rejected-count">0</h2>
+                        <span>Declined requests</span>
+                    </div>
+
+                </div>
+
+
+                <!-- VERIFIED REQUESTS TABLE -->
+                <div class="approval-card">
+
+                    <div class="section-heading">
+
+                        <div>
+                            <h2>Verified Requests</h2>
+
+                            <p>
+                                Department requests that passed auditor verification.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+                                <tr>
+                                    <th>Request ID</th>
+                                    <th>Department</th>
+                                    <th>Purpose</th>
+                                    <th>Amount</th>
+                                    <th>Auditor Status</th>
+                                    <th>Admin Status</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="admin-request-queue">
+                                <!-- Automatically populated by approval.js -->
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+
+                <!-- REQUEST DETAILS -->
+                <div class="approval-card">
+
+                    <div class="section-heading">
+
+                        <div>
+                            <h2>Request Details</h2>
+
+                            <p>
+                                Review the selected department request before making a decision.
+                            </p>
+                        </div>
+
+                        <span class="status pending" id="selected-status">
+                            Not Selected
+                        </span>
+
+                    </div>
+
+
+                    <!-- REQUEST INFORMATION -->
+                    <div class="details-grid">
+
+                        <div class="detail-item">
+                            <label>Request ID</label>
+                            <p id="detail-id">Not selected</p>
+                        </div>
+
+                        <div class="detail-item">
+                            <label>Department</label>
+                            <p id="detail-department">Not selected</p>
+                        </div>
+
+                        <div class="detail-item">
+                            <label>Requested Amount</label>
+                            <p id="detail-amount">Not selected</p>
+                        </div>
+
+                        <div class="detail-item">
+                            <label>Auditor Verification</label>
+                            <p class="verified-text" id="detail-auditor-status">
+                                Not selected
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <!-- PURPOSE -->
+                    <div class="detail-item purpose-section">
+
+                        <label>Purpose of Request</label>
+
+                        <p id="detail-purpose">
+                            Select a request to view its purpose.
+                        </p>
+
+                    </div>
+
+
+                    <!-- SUPPORTING DOCUMENTS -->
+                    <div class="detail-item purpose-section">
+
+                        <label>Supporting Documents</label>
+
+                        <p id="admin-documents">
+                            No request selected.
+                        </p>
+
+                    </div>
+
+
+                    <!-- ADMIN REMARKS -->
+                    <div class="remarks-section">
+
+                        <label for="admin-remarks">
+                            Administrator Remarks
+                        </label>
+
+                        <textarea
+                            id="admin-remarks"
+                            placeholder="Enter remarks or reason for rejection..."
+                        ></textarea>
+
+                    </div>
+
+
+                    <!-- ACTION BUTTONS -->
+                    <div class="action-buttons">
+
+                        <button
+                            type="button"
+                            class="approve-btn"
+                            id="approve-btn"
+                            disabled>
+
+                            Approve Request
+
+                        </button>
+
+                        <button
+                            type="button"
+                            class="reject-btn"
+                            id="reject-btn"
+                            disabled>
+
+                            Reject Request
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="js/approval.js"></script>
+
+</body>
+</html>
