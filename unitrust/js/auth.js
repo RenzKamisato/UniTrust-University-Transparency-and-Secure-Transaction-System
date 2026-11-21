@@ -35,7 +35,7 @@ const pagePermissions = {
 
     "request.html": ["department", "admin"],
 
-    "auditor.html": ["auditor"],
+    "auditor.html": ["auditor", "admin"],
 
     "approval.html": ["admin"],
 
