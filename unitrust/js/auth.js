@@ -144,7 +144,7 @@ function updateRoleLabel(user) {
 
     const roleBadge = document.querySelector(".topbar .pill");
 
-    if (roleBadge && roleBadge.textContent.toLowerCase().includes("public")) {
+    if (roleBadge) {
         roleBadge.textContent = formatRole(user.role);
     }
 
@@ -198,14 +198,13 @@ function addSidebarAccount(user) {
     }
 
 
-    // Prevent duplicate account sections
-    if (document.getElementById("sidebar-account")) {
-
-        return;
-
+    // Keep the same account and sign-out section on every page.
+    const existingAccount = document.getElementById("sidebar-account");
+    if (existingAccount) {
+        existingAccount.remove();
     }
 
-
+    const displayName = user.name || user.username || "User";
     const accountSection = document.createElement("div");
 
     accountSection.id = "sidebar-account";
@@ -218,12 +217,12 @@ function addSidebarAccount(user) {
         <div class="account-information">
 
             <div class="account-avatar">
-                ${user.name.charAt(0).toUpperCase()}
+                ${displayName.charAt(0).toUpperCase()}
             </div>
 
             <div class="account-details">
 
-                <strong>${user.name}</strong>
+                <strong>${displayName}</strong>
 
                 <span>${formatRole(user.role)}</span>
 
