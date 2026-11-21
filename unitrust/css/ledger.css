@@ -190,7 +190,7 @@
 
 /* SIDEBAR SPACING - MATCH OTHER PORTAL PAGES */
 .sidebar .nav {
-    margin-top: 38px;
+    margin-top: 0;
     gap: 8px;
 }
 
