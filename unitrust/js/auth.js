@@ -33,7 +33,7 @@ const pagePermissions = {
 
     "dashboard.html": ["public", "department", "auditor", "admin"],
 
-    "request.html": ["department"],
+    "request.html": ["department", "admin"],
 
     "auditor.html": ["auditor"],
 
@@ -130,6 +130,29 @@ function protectPage() {
     hideUnauthorizedLinks(user);
 
     addSidebarAccount(user);
+
+    updateRoleLabel(user);
+
+}
+
+
+// ==========================================
+// UPDATE ROLE LABELS FOR SIGNED-IN USERS
+// ==========================================
+
+function updateRoleLabel(user) {
+
+    const roleBadge = document.querySelector(".topbar .pill");
+
+    if (roleBadge && roleBadge.textContent.toLowerCase().includes("public")) {
+        roleBadge.textContent = formatRole(user.role);
+    }
+
+    const navLabel = document.querySelector(".sidebar .nav-label");
+
+    if (navLabel && user.role === "admin") {
+        navLabel.textContent = "Administrator Portal";
+    }
 
 }
 
