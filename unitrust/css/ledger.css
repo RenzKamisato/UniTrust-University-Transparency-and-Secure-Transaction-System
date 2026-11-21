@@ -186,3 +186,14 @@
        padding-top: 20px;
     }
 }
+
+
+/* SIDEBAR SPACING - MATCH OTHER PORTAL PAGES */
+.sidebar .nav {
+    margin-top: 38px;
+    gap: 8px;
+}
+
+.sidebar .nav a {
+    margin-bottom: 0;
+}
