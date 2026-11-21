@@ -25,7 +25,6 @@ const sidebarPages = [
     { page: "dashboard.html", label: "▦  Overview" },
     { page: "ledger.html", label: "◉  Blockchain Ledger" },
     { page: "request.html", label: "+  Department Request" },
-    { page: "tracking.html", label: "⌕  Track Request" },
     { page: "auditor.html", label: "✓  Auditor Verification" },
     { page: "approval.html", label: "▣  Admin Approval" }
 ];
@@ -76,6 +75,18 @@ function buildSharedSidebar(user, currentPage) {
             link.setAttribute("aria-current", "page");
         }
         nav.appendChild(link);
+
+        // Show Track Request only as a nested item while viewing Blockchain Ledger.
+        if (item.page === "ledger.html" && currentPage === "ledger.html") {
+            const trackingAllowed = (pagePermissions["tracking.html"] || []).includes(user.role);
+            if (trackingAllowed) {
+                const trackingLink = document.createElement("a");
+                trackingLink.href = "tracking.html";
+                trackingLink.textContent = "⌕  Track Request";
+                trackingLink.className = "nav-subitem";
+                nav.appendChild(trackingLink);
+            }
+        }
     });
 
     const navLabel = sidebar.querySelector(".nav-label");
@@ -173,6 +184,15 @@ const authStyles = document.createElement("style");
 authStyles.textContent = `
     .sidebar { display: flex; flex-direction: column; }
     .sidebar .nav { display: flex; flex-direction: column; }
+    .sidebar .nav .nav-subitem {
+        margin: 2px 0 8px 25px;
+        padding: 9px 12px;
+        width: calc(100% - 25px);
+        box-sizing: border-box;
+        font-size: 12px;
+        opacity: .9;
+        border-left: 2px solid rgba(255,255,255,.28);
+    }
     .sidebar-account {
         margin-top: auto; padding: 18px 15px 12px;
         border-top: 1px solid rgba(255,255,255,.15);
