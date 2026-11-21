@@ -16,7 +16,7 @@ const pagePermissions = {
     "dashboard.html": ["public", "department", "auditor", "admin"],
     "ledger.html": ["public", "department", "auditor", "admin"],
     "tracking.html": ["public", "department", "auditor", "admin"],
-    "request.html": ["department", "admin"],
+    "request.html": ["public", "department", "admin"],
     "auditor.html": ["auditor", "admin"],
     "approval.html": ["admin"]
 };
@@ -154,7 +154,7 @@ function protectPage() {
     const currentPage = window.location.pathname.split("/").pop().toLowerCase();
     const user = getCurrentUser();
 
-    const publicPages = ["index.html", "dashboard.html", "tracking.html", "ledger.html"];
+    const publicPages = ["index.html", "dashboard.html", "tracking.html", "ledger.html", "request.html"];
 
     if (publicPages.includes(currentPage) && !user) return;
 
